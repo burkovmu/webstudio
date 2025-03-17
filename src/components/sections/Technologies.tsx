@@ -4,7 +4,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ContactModal from './ContactModal';
-import Button from '@/components/ui/Button';
 
 // Данные о технологиях
 const technologies = [
@@ -67,18 +66,6 @@ const Technologies = () => {
       transition: {
         duration: 0.8,
         ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
-  // Анимация для технологий
-  const techItemVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
       },
     },
   };
@@ -172,31 +159,21 @@ const Technologies = () => {
                   {category.description}
                 </p>
                 <div className="space-y-6">
-                  {category.items.map((tech, index) => (
-                    <motion.div
+                  {category.items.map((tech) => (
+                    <div
                       key={tech.name}
-                      variants={techItemVariants}
-                      className="flex items-center gap-4 group/item"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.2 }}
+                      className="technology-item flex flex-col items-center justify-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 transition-all hover:bg-card/80 hover:scale-105"
                     >
-                      <div className="relative w-12 h-12 flex-shrink-0 bg-card rounded-xl p-2.5 border border-border/50 shadow-sm group-hover/item:shadow-md group-hover/item:border-accent/30 transition-all duration-300">
+                      <div className="relative w-12 h-12 mb-3">
                         <Image
                           src={tech.icon}
                           alt={tech.name}
                           fill
-                          className="object-contain p-1.5 group-hover/item:scale-110 transition-transform duration-300"
+                          className="object-contain"
                         />
                       </div>
-                      <div>
-                        <h4 className="font-medium text-foreground group-hover/item:text-accent transition-colors duration-300">
-                          {tech.name}
-                        </h4>
-                        <p className="text-sm text-foreground/60 group-hover/item:text-foreground/80 transition-colors duration-300">
-                          {tech.description}
-                        </p>
-                      </div>
-                    </motion.div>
+                      <span className="text-sm font-medium">{tech.name}</span>
+                    </div>
                   ))}
                 </div>
               </div>

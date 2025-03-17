@@ -10,8 +10,7 @@ import ParallaxItem from '@/components/ui/ParallaxItem';
 import MagneticButton from '@/components/ui/MagneticButton';
 
 const Hero = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLHeadingElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
@@ -20,10 +19,10 @@ const Hero = () => {
       gsap.registerPlugin(ScrollTrigger);
       
       // Анимация для фона
-      gsap.to(heroRef.current, {
+      gsap.to(containerRef.current, {
         backgroundPositionY: '30%',
         scrollTrigger: {
-          trigger: heroRef.current,
+          trigger: containerRef.current,
           start: 'top top',
           end: 'bottom top',
           scrub: true,
@@ -57,7 +56,7 @@ const Hero = () => {
 
   return (
     <section
-      ref={heroRef}
+      ref={containerRef}
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >

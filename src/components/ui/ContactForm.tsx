@@ -56,17 +56,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose, isSimplified = false
     { value: 'более 500 000 ₽', label: 'более 500 000 ₽' },
   ];
 
-  const featureOptions = [
-    { value: 'responsive', label: 'Адаптивный дизайн' },
-    { value: 'seo', label: 'SEO-оптимизация' },
-    { value: 'cms', label: 'Система управления контентом' },
-    { value: 'multilingual', label: 'Многоязычность' },
-    { value: 'auth', label: 'Авторизация пользователей' },
-    { value: 'payment', label: 'Платежная система' },
-    { value: 'analytics', label: 'Аналитика' },
-    { value: 'animation', label: 'Анимации и эффекты' },
-  ];
-
   const validateForm = () => {
     const newErrors: Partial<FormData> = {};
     
@@ -96,18 +85,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose, isSimplified = false
     if (errors[name as keyof FormData]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
-  };
-
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, checked } = e.target;
-    
-    setFormData(prev => {
-      if (checked) {
-        return { ...prev, features: [...prev.features, value] };
-      } else {
-        return { ...prev, features: prev.features.filter(feature => feature !== value) };
-      }
-    });
   };
 
   const handleSubmit = (e: React.FormEvent) => {

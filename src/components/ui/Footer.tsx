@@ -70,7 +70,7 @@ const Footer = () => {
               Мы создаем профессиональные сайты с уникальным дизайном и впечатляющей анимацией, которые выделяют ваш бренд среди конкурентов.
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((link, index) => (
+              {socialLinks.map((link) => (
                 <motion.a
                   key={link.name}
                   href={link.url}

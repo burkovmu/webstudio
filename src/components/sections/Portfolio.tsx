@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect, memo, useMemo } from 'react';
+import React, { useState, useRef, memo, useMemo } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import ContactModal from './ContactModal';

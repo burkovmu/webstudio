@@ -19,18 +19,18 @@ const ContactModal: React.FC<ContactModalProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => {
+  const handleOpenModal = () => {
     setIsOpen(true);
     document.body.style.overflow = 'hidden';
   };
 
-  const closeModal = () => {
+  const handleCloseModal = () => {
     setIsOpen(false);
     document.body.style.overflow = 'auto';
   };
 
   const getButtonClasses = () => {
-    let baseClasses = 'font-medium rounded-full transition-all duration-300 inline-flex items-center justify-center';
+    const baseClasses = 'font-medium rounded-full transition-all duration-300 inline-flex items-center justify-center';
     
     // Размер кнопки
     const sizeClasses = {
@@ -52,7 +52,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
   return (
     <>
       <button
-        onClick={openModal}
+        onClick={handleOpenModal}
         className={getButtonClasses()}
       >
         {buttonText}
@@ -67,7 +67,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="fixed inset-0 bg-background/70 backdrop-blur-md z-50"
-              onClick={closeModal}
+              onClick={handleCloseModal}
             />
             
             <motion.div
@@ -76,7 +76,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.4 }}
               className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
-              onClick={closeModal}
+              onClick={handleCloseModal}
             >
               <div 
                 className="bg-card/95 w-full max-w-2xl rounded-2xl shadow-2xl p-6 md:p-8 relative border border-border backdrop-blur-lg overflow-hidden"
@@ -90,7 +90,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    closeModal();
+                    handleCloseModal();
                   }}
                   className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors bg-background/50 hover:bg-background/80 backdrop-blur-sm rounded-full p-2 border border-border/50 hover:border-border z-50"
                   aria-label="Закрыть"
@@ -110,7 +110,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
                   <p className="text-center text-foreground/70 mb-6">
                     Заполните форму, и мы свяжемся с вами для обсуждения деталей
                   </p>
-                  <ContactForm onClose={closeModal} />
+                  <ContactForm onClose={handleCloseModal} />
                 </div>
               </div>
             </motion.div>
