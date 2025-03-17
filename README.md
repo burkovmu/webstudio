@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WebStudio
 
-## Getting Started
+Современный сайт-портфолио веб-студии, разработанный с использованием Next.js и Tailwind CSS.
 
-First, run the development server:
+## Демо
+
+Демо-версия проекта доступна по адресу: [https://webstudio-burkovmu.vercel.app](https://webstudio-burkovmu.vercel.app)
+
+## Технологии
+
+- **Next.js 15** - React-фреймворк с серверным рендерингом
+- **Tailwind CSS** - Утилитарный CSS-фреймворк
+- **Framer Motion** - Библиотека для создания анимаций
+- **TypeScript** - Типизированный JavaScript
+
+## Особенности
+
+- Адаптивный дизайн для всех устройств
+- Оптимизированная производительность
+- Анимации и интерактивные элементы
+- SEO-оптимизация
+- Оптимизация изображений
+
+## Установка и запуск
+
+### Требования
+
+- Node.js 18.0 или выше
+- npm 8.0 или выше
+
+### Установка
+
+```bash
+# Клонирование репозитория
+git clone https://github.com/burkovmu/webstudio.git
+cd webstudio
+
+# Установка зависимостей
+npm install
+```
+
+### Запуск в режиме разработки
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Приложение будет доступно по адресу [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Сборка для продакшена
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Запуск продакшен-версии
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Структура проекта
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+webstudio/
+├── public/           # Статические файлы
+│   └── images/       # Изображения
+├── src/              # Исходный код
+│   ├── app/          # Маршрутизация Next.js App Router
+│   ├── components/   # React-компоненты
+│   │   ├── sections/ # Секции страницы
+│   │   └── ui/       # UI-компоненты
+│   ├── lib/          # Вспомогательные функции
+│   └── styles/       # Глобальные стили
+├── .github/          # GitHub Actions
+├── next.config.js    # Конфигурация Next.js
+└── tailwind.config.js # Конфигурация Tailwind CSS
+```
 
-## Deploy on Vercel
+## Деплой на Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Проект настроен для автоматического деплоя на Vercel при пуше в ветку `main`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Лицензия
+
+MIT
